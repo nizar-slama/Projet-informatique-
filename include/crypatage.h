@@ -1,8 +1,8 @@
 
-#define __ENCRYPT_H__
+#define __CRYPTAGE_H__
 
-#ifndef __USER_ACCOUNT_H__
-	#include "../include/user_account.h"
+#ifndef __USER_PROF_H__
+	#include "../include/user_prof.h"
 #endif
 
 /**
