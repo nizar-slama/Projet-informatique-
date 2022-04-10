@@ -1,28 +1,19 @@
-#define __PROFESSEUR_H__
+#define __CLASSROOM_H__
 #ifndef __USER_PROF_H__
     #include "../include/user_prof.h"
 #endif
 
-typedef struct professeur_s *Prof;
+typedef struct prof_s *Prof;
 typedef struct salle_s *Salle;
 typedef struct formations_s *Formation;
+typedef struct etage_s *Etage
 
 
-char * get_subject(Prof prof);
+Prof addProf(prof_s prof);
+Prof changeProf(prof_s prof);
+Prof removeProf(prof_s prof);
+char ListProf(prof_s prof);
 
-/**
- * @brief Retourne le type d'un compte
- * 
- * @param acc 
- * @return char* 
- */
-char * get_type_account(Account acc);
-
-
-/**
- * @brief Retourne le compte suivant du compte
- * 
- * @param ac 
- * @return Account 
- */
-Account getNextAccount(Account ac);
+Salle addSalle(salle_s salle);
+Salle changeSalle(salle_s salle);
+char Listsalle(salle_s salle);
