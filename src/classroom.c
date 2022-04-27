@@ -46,8 +46,7 @@ typedef struct creneau_s {
 typedef struct salle_s{
 	creneau* C;
 	int occupeted; 
-    int numero;      
-	struct salle_s* next;    
+    int numero;         
 } salle;
 
 
