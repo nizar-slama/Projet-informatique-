@@ -43,9 +43,9 @@ typedef struct creneau_s {
 	int debut;
 	int fin;
 	int occupied;
+}creneau;
 typedef struct salle_s{
 	creneau* C;
-	int occupeted; 
     int numero;         
 } salle;
 
