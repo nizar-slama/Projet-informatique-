@@ -39,8 +39,12 @@ typedef struct formations_s{
     int occupeted;
 	struct formations_s* next;    
 } formations;
-
+typedef struct creneau_s {
+	int debut;
+	int fin;
+	int occupied;
 typedef struct salle_s{
+	creneau* C;
 	int occupeted; 
     int numero;      
 	struct salle_s* next;    
