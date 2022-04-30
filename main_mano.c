@@ -58,6 +58,7 @@ while (navigateur != 0){
             printf("Pour supprimer un prof de cette liste, entrer : 3 \n");
             scanf("%d \n",&a);
             gerer_prof(a);
+            navigateur = 0;
         }
         if (navigateur == 4){
             int b;
@@ -67,12 +68,13 @@ while (navigateur != 0){
             printf("Pour afficher la liste des salles reservees, entrer : 4 \n");
             scanf("%d \n",&b);
             gerer_reservation(b);
+            navigateur = 0;
         }
         if (navigateur == 5){
             printf("Entrer le nouveau mot de passe : \n");
             scanf("%s \n", &mdp);
             changer_mdp(mdp);
-            navigateur == 0;
+            navigateur = 0;
         }
     }
 
@@ -92,7 +94,7 @@ while (navigateur != 0){
             printf("Veuillez entrer le nom du proffesseur : \n");
             scanf("%s",&nomprof);
             afficher_edt_prof(nomprof);
-            navigateur == 0;
+            navigateur = 0;
         }
         if ( navigateur == 7){
             string nompromo;
@@ -100,7 +102,7 @@ while (navigateur != 0){
             printf("Veuillez entrer le nom du promotion : \n");
             scanf("%s",&nompromo);
             afficher_edt_prof(nompromo);
-            navigateur == 0;
+            navigateur = 0;
         }
         if ( navigateur == 8){
             int numsalle;
@@ -108,7 +110,7 @@ while (navigateur != 0){
             printf(" Salle 1 , Salle 2, Salle 3, ou Salle 4 \n");
             scanf("%d"; &numsalle);
             afficher_edt_salle(numsalle);
-            navigateur == 0;
+            navigateur = 0;
         }
     }
 }
