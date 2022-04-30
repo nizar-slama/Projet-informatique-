@@ -89,11 +89,11 @@ _Bool isemptyP(listProf L){
     return false;
     }
 
-Prof creerprof(char nom,char firstname,int o, char subject){
+Prof creerprof(char nom,char firstname, char subject){
     Prof p= malloc(sizeof(struct prof_s));
     p->nom=nom;
     p->firstname=firstname;
-    p->occupied=o;
+    p->occupied=0;
     p->subject=subject;
     p->next=NULL;
 	return p;
