@@ -101,10 +101,7 @@ Prof creerprof(char nom,char firstname,int o, char subject){
 void afficher_nom_prof(Prof prof){
     printf("%d\n",prof->name);
 }
-void afficher_listProf(listProf L){
-    fprintf("prof.dat");
-}
-void affiche_matiere_prof(Prof prof){
+void afficher_matiere_prof(Prof prof){
     printf("%s\n", prof->subject);
 }
 
@@ -168,4 +165,17 @@ creneau creertabcreneau(creneau C1, creneau C2,creneau C3,creneau C4){
      s->C=C;
     return s;
  }
+ 
+ void afficher_listProf(){
+	FILE* fichier;
+	fichier=fopen("prof.dat","r");
+		char filename[100], c;
+		c = fgetc(fichier);
+    while (c != EOF)
+    {
+        printf ("%c", c);
+        c = fgetc(fichier);
+    }
+    fclose(fichier);
  }
+
