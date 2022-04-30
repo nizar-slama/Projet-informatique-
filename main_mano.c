@@ -13,7 +13,20 @@ int main ( int argc, char *argv[]){
 // initialisation
 scrand(time(NULL));
 int navigateur = -1;
-string mdp;
+char* mdp;
+creneau c810 = creercreneau(8, 10, 0);
+creneau c1012 = creercreneau(10, 12, 0);
+creneau c1315 = creercreneau(13, 15, 0);
+creneau c1517 = creercreneau(15, 17, 0);
+creneau creaneaux = creertabcreneau (c810, c1012, c1315, c1517);
+salle salle1 = creersalle(1,creneaux);
+salle salle2 = creersalle(2,creneaux);
+salle salle3 = creersalle(3,creneaux);
+salle salle4 = creersalle(4,creneaux);
+
+salle emploie_du_temps = creertabS(salle1, salle2, salle3, salle4);
+
+listprof L;
 
 // Parcours du menu
 
@@ -52,13 +65,12 @@ while (navigateur != 0){
 
         if (navigateur == 3){
             int a;
-            afficher_prof();
+            afficher_prof(L);
             printf("Pour ajouter un prof à cette liste, entrer : 1 \n");
             printf("Pour modifier un prof de cette liste, entrer : 2 \n");
             printf("Pour supprimer un prof de cette liste, entrer : 3 \n");
             scanf("%d \n",&a);
-            gerer_prof(a);
-            navigateur = 0;
+            gerer_prof(a,L);
         }
         if (navigateur == 4){
             int b;
@@ -67,14 +79,13 @@ while (navigateur != 0){
             printf("Pour modifier une reservation, entrer : 3 \n");
             printf("Pour afficher la liste des salles reservees, entrer : 4 \n");
             scanf("%d \n",&b);
-            gerer_reservation(b);
-            navigateur = 0;
+            gerer_reservation(b,emploie_du_temps,L);
         }
         if (navigateur == 5){
             printf("Entrer le nouveau mot de passe : \n");
             scanf("%s \n", &mdp);
             changer_mdp(mdp);
-            navigateur = 0;
+            navigateur == 0;
         }
     }
 
@@ -89,16 +100,16 @@ while (navigateur != 0){
         scanf("%d \n",&navigateur);
 
         if( navigateur == 6){
-            string nomprof;
-            afficher_nom_prof();
+            char* nomprof;
+            afficher_prof(L);
             printf("Veuillez entrer le nom du proffesseur : \n");
             scanf("%s",&nomprof);
             afficher_edt_prof(nomprof);
             navigateur = 0;
         }
         if ( navigateur == 7){
-            string nompromo;
-            afficher_nom_promo();
+            char* nompromo;
+            afficher_promo();
             printf("Veuillez entrer le nom du promotion : \n");
             scanf("%s",&nompromo);
             afficher_edt_prof(nompromo);
