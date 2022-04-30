@@ -11,7 +11,7 @@ listProf addprof(Prof , listProf );
 void changeProf(Prof , listProf );
 listProf removeProf(listProf );
 _Bool isemptyP(listProf );
-Prof creerprof(char ,char ,int , char );
+Prof creerprof(char ,char , char );
 void profdat(listProf );
 __BOOL profdispo(Prof );
 void afficher_nom_prof(Prof );
