@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "../include/classroom_final.h"
+#include "../include/classroom.h"
 #include "../include/crypatage.h"
 #include "../include/parson.h"
 #include "../include/user_prof.h"
+#include "../include/gerer.h"
 
 
 int main ( int argc, char *argv[]){
