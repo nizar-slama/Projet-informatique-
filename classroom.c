@@ -64,19 +64,13 @@ listProf addprof(Prof prof, listProf L){
        return L;
    }
    }
-
-   listProf removeProf( listProf L){
-    assert(!(isemptyP(L)));
-    if (L->taille==1){
-        L->First=NULL;
-        L->Last=NULL;
-        L->taille=0;
-    }else{
-        L->First=L->First->next;
+    void removeProf(Prof prof,listProf L){
+        Prof k=L->First->next;
+    while(k->next!=prof){
+        k=k->next;
     }
-    return L;
-}
-
+    k->next=k->next->next;
+    }
 void changeProf(Prof prof, listProf L){
   assert(!isemptyP(L));
   Prof k=L->First->next;
