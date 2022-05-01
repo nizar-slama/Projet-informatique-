@@ -102,24 +102,35 @@ void afficher_matiere_prof(Prof prof){
     printf("%s\n", prof->subject);
 }
 
-
 void profdat(listProf L){
     assert(L!=NULL);
     assert(L->taille!=0);
      FILE* fichier;
      fichier=fopen("prof.dat","w");
 		Prof f=malloc(sizeof(Prof));
+        struct json_object *nom;
+    struct json_object *firstname;
+    struct json_object *occupied;
+    struct json_object *subject;
+
     while (L->First->next!=NULL){
+        
         f->nom=L->First->nom;
         f->firstname=L->First->firstname;
         f->occupied=L->First->occupied;
         f->subject=L->First->subject;
-        fprintf(fichier,"%s %s %d %s \n",f->nom,f->firstname,f->occupied,f->subject);         
+        nom=f->nom;
+        firstname=f->firstname;
+        occupied=f->occupied;
+        subject=f->subject;
+        printf("Nom:%s\n", json_object_get_string(nom));
+    printf("Nom:%s\n", json_object_get_string(firstname));
+    printf("Nom:%s\n", json_object_get_int(occupied));
+    printf("Nom:%s\n", json_object_get_string(subject));      
         L->First=L->First->next;
     }
     fclose(fichier);
     }
-
 
  bool sallelibre(salle s, creneau cr){
     assert(s!=NULL);
