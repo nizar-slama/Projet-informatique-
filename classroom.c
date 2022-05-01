@@ -74,7 +74,7 @@ listProf addprof(Prof prof, listProf L){
 void changeProf(Prof prof, listProf L){
   assert(!isemptyP(L));
   Prof k=L->First->next;
-  removeProf(L);
+  removeProf(prof, L);
   prof->next=k;
   L->First=prof;
 }
