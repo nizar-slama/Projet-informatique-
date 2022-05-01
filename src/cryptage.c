@@ -1,12 +1,12 @@
 #define _XOPEN_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <crypt.h>
-#include "../include/user_account.h"
-#include "../include/account.h"
-#include "../include/encrypt.h"
+#include "../include/user_prof.h"
+#include "../include/cryptage.h"
 
 
 /**
@@ -27,9 +27,9 @@ char* encryptPassword(char* string){
  * @brief Verifie si le mot de passe est valide
  * 
  * @param password 
- * @param ua 
+ * @param prof
  * @return int 
  */
-int passwordIsGood(char * password, User_account ua){
-    return (strcmp(encryptPassword(password),get_pwd(ua))==0 ? 1 : 0);
+int passwordIsGood(char * password, User_prof prof){
+    return (strcmp(encryptPassword(password),get_pwd(prof))==0 ? 1 : 0);
 }
