@@ -9,7 +9,7 @@ typedef struct salle_s *salle;
 typedef struct listSalle_s *listSalle;
 listProf addprof(Prof , listProf );
 void changeProf(Prof , listProf );
-listProf removeProf(listProf );
+listProf removeProf(Prof, listProf );
 _Bool isemptyP(listProf );
 Prof creerprof(char ,char , char );
 void profdat(listProf );
